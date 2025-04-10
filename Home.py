@@ -39,7 +39,7 @@ st.title("Welcome to GreenPrint")
 st.subheader("Your Personal Carbon Footprint Tracker")
 
 st.markdown("""
-**GreenPrint** is an interactive tool designed to help you measure your **carbon footprint** — the total amount of greenhouse gases, primarily carbon dioxide, that your lifestyle and choices emit into the atmosphere.
+**GreenPrint** is an interactive tool designed to help you measure your **carbon footprint** — the total amount of greenhouse gas emissions, that your lifestyle and choices emit into the atmosphere.
 
 ---
 
@@ -57,6 +57,11 @@ It's measured in **kg of CO₂ equivalent (CO₂e)**.
 
 ### 🚨 Why It Matters
 
+At GreenPrint we believe that our planet is finite and there is a need for sustainability. 
+Consumption of resources leads to greenhouse gas emissions, 
+which are responsible for global warming and other environmental challenges such as floods, forest fires,
+drought, conflict and ecological damage.
+
 The higher our carbon footprint, the more we contribute to climate change. By understanding your own emissions, you can:
 
 - Reduce your environmental impact  
@@ -68,8 +73,8 @@ The higher our carbon footprint, the more we contribute to climate change. By un
 ### 🛠️ How This App Works
 
 1. Go to the **Profile** page and create your profile, which brings you directly to the **Calculator** and enter details about your daily habits.  
-2. Get an estimate of your **annual carbon footprint**.  
-3. Compare your score to **national and global averages**.  
+2. Get an estimate of your **monthly carbon footprint**.  
+3. Compare your score to **national, European and global averages**.  
 4. See personalized suggestions on how to **reduce** it.
 
 ---
