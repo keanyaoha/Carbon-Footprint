@@ -85,8 +85,7 @@ def init_session_state():
             st.session_state[key] = value
 
 init_session_state()
-
-# --- Load Data ---
+-
 csv_url = "https://raw.githubusercontent.com/keanyaoha/Final_Project_WBS/main/emission_factor_formated.csv"
 csv_url_1 = "https://raw.githubusercontent.com/keanyaoha/Final_Project_WBS/main/per_capita_filtered_monthly.csv"
 
