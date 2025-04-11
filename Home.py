@@ -7,25 +7,23 @@ st.set_page_config(
     layout="centered"
 )
 
-# --- Force Logo to Appear at Top of Sidebar ---
+# --- Custom Sidebar Logo + Background ---
 st.markdown(
     """
     <style>
-      [data-testid="stSidebar"]::before {
-      content: "";
-      display: block;
-      background-image: url('/static/GreenPrint_logo.png');
-      background-size: 90% auto;
-      background-repeat: no-repeat;
-      background-position: center;
-      height: 140px;
-      margin: 1.5rem auto -4rem auto;
-   }
-
+        [data-testid="stSidebar"]::before {
+            content: "";
+            display: block;
+            background-image: url('https://raw.githubusercontent.com/keanyaoha/Carbon-Footprint/main/GreenPrint_logo.png');
+            background-size: 90% auto;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 140px;
+            margin: 1.5rem auto -4rem auto;
+        }
         section[data-testid="stSidebar"] {
             background-color: #d6f5ec;
         }
-
         .stApp {
             background-color: white;
         }
@@ -34,52 +32,91 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# --- Main App Content ---
+# --- Page Title ---
 st.title("Welcome to GreenPrint")
 st.subheader("Your Personal Carbon Footprint Tracker")
 
+# --- Intro Content ---
 st.markdown("""
-**GreenPrint** is an interactive tool designed to help you measure your **carbon footprint** — the total amount of greenhouse gas emissions, that your lifestyle and choices emit into the atmosphere.
+ 
+**GreenPrint** is your interactive guide to understanding and reducing your environmental impact.  
+With just a few quick questions about how you **live, travel, eat**, and **consume resources**, you'll get:
+
+<br>
+
+✅ **A personalized estimate** of your yearly carbon emissions  
+📊 **A clear breakdown** of which habits contribute the most  
+🌍 **Comparisons** with your country, Europe, and global averages  
+🌞 **Practical tips** to reduce your footprint and live more sustainably.  
+
+<br>
+
+You can also
+
+<be>
+
+📄 **Download a PDF report** containing your calculation and personalized recommendations  
+🤖 **Use GreenPrint AI** to help answer your questions about your carbon footprint and offer real-time advice.
+
+<br>
+
+Whether you're just curious or committed to climate action, **GreenPrint** is here to support your journey.
 
 ---
 
-### 🧠 What is a Carbon Footprint?
+### 🔍 What is a Carbon Footprint?
 
-A **carbon footprint** includes emissions from:
-- 🏠 Household energy use (heating, electricity)
-- 🚗 Transportation (car, flights, public transport)
-- 🍔 Food and consumption habits
-- 🛒 Shopping, waste, and more
+Your **carbon footprint** is the total amount of **greenhouse gases** released into the air because of your everyday activities.
 
-It's measured in **kg of CO₂ equivalent (CO₂e)**.
+Common activities like:
+
+- 🏠 **Using energy at home** (heating, electricity)
+- 🚗 **Getting around** (cars, buses, flights)
+- 🍔 **What you eat** (especially meat and dairy)
+- 🛍️ **What you buy and throw away** (clothes, electronics, waste)
+
+Your footprint shows how much your actions contribute to climate change. By understanding your footprint, you can take steps to reduce it and make more sustainable choices!
 
 ---
 
 ### 🚨 Why It Matters
 
-At GreenPrint we believe that our planet is finite and there is a need for sustainability. 
-Consumption of resources leads to greenhouse gas emissions, 
-which are responsible for global warming and other environmental challenges such as floods, forest fires,
-drought, conflict and ecological damage.
+At **GreenPrint**, we believe that our planet is finite, and sustainability is crucial for our future. The consumption of resources leads to greenhouse gas emissions, which are responsible for global warming. These emissions contribute to environmental challenges such as:
 
-The higher our carbon footprint, the more we contribute to climate change. By understanding your own emissions, you can:
+- 🌊 Floods
+- 🔥 Forest fires
+- 🌵 Droughts
+- ⚔️ Conflict
+- 🌍 Ecological damage
 
-- Reduce your environmental impact  
-- Save money through efficient choices  
-- Join the global effort to combat the climate crisis  
+<be>
+
+The higher your carbon footprint, the more you contribute to these issues. By understanding your emissions, you can:
+
+- 🌍 **Reduce your environmental impact**
+- 💰 **Save money** through efficient choices
+- 🌱 **Join the global effort** to fight climate change and protect the planet 
+
 
 ---
 
 ### 🛠️ How This App Works
 
-1. Go to the **Profile** page and create your profile, which brings you directly to the **Calculator** and enter details about your daily habits.  
-2. Get an estimate of your **monthly carbon footprint**.  
-3. Compare your score to **national, European and global averages**.  
-4. See personalized suggestions on how to **reduce** it.
+1. Go to the **Profile** page and create your profile
+2. Use the **Calculator** to enter details about your daily habits, get an estimate of your **annual carbon footprint**, and compare your score to **national and global averages**.  
+3. Go to **Breakdown** page to see more details about your carbon footprint and receive personalized suggestions on how to **reduce** it.
+4. Ask your questions from **GreenPrint AI** for real-time advice on reducing your carbon footprint.
 
 ---
 
 ### 🌿 Ready to make a difference?
 
-Start by heading to the **Profile** page in the sidebar!
-""")
+Let's get started! **Click Next →** to begin creating your profile and take the first step in reducing your carbon footprint.
+""", unsafe_allow_html=True)
+
+# --- Simulated Redirect to Profile using query param ---
+col1, col2, col3 = st.columns([1, 6, 1])
+with col2:
+    if st.button("Next →", use_container_width=False):
+        st.experimental_set_query_params(page="Profile")
+        st.markdown('<meta http-equiv="refresh" content="0;url=./Profile">', unsafe_allow_html=True)
