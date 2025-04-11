@@ -1,9 +1,14 @@
-streamlit
+
 pandas
 matplotlib
 streamlit-extras
 Pillow
 plotly
+reportlab
+kaleido
+
+# Core
+streamlit
 
 # LlamaIndex
 llama-index-core==0.12.10
