@@ -104,7 +104,8 @@ def generate_pdf_report(logo_data, category_data, top_activities_data, fig1_img_
         else:
             top_activities_dict = {}
 
-        if top_activities_dict:
+
+       if top_activities_dict:
             def format_activity_name_pdf(activity_key): # Needs access to this mapping
                  mapping = {
                   "Domestic_flight": "Domestic Flights", "International_flight": "International Flights",
@@ -122,7 +123,8 @@ def generate_pdf_report(logo_data, category_data, top_activities_data, fig1_img_
                  }
                  return mapping.get(activity_key, activity_key.replace("_", " ").capitalize())
             
-           for activity_key, emission in top_activities_dict.items():
+          
+            for activity_key, emission in top_activities_dict.items():
                 if y_pos < MARGIN + 1*cm:
                     c.showPage(); c.setFont("Helvetica", 9.5); y_pos = height - MARGIN
                 emission_val = emission if isinstance(emission, (int, float)) else 0
@@ -219,6 +221,8 @@ else:
     if not emissions_filtered:
          st.warning("No positive emissions recorded. Cannot generate breakdown.")
          st.stop()
+
+
     else:
         # --- Define categories ---
         categories = {
@@ -227,7 +231,7 @@ else:
             "Energy & Water": ["Electricity", "Water"],
             "Other": ["Hotel_stay"]
         }
-       
+
           # --- Compute totals ---
         category_totals = {}
         all_categorized_emissions = {}
@@ -259,7 +263,7 @@ else:
 
         # --- Top Emitting Activities ---
         activity_df = pd.DataFrame(list(emissions_filtered.items()), columns=["Activity Key", "Emissions"])
-
+       
         # --- Format Activity Names for Display ---
         def format_activity_name(activity_key): # Keep consistent formatting function
              mapping = {
@@ -278,7 +282,7 @@ else:
              }
              return mapping.get(activity_key, activity_key.replace("_", " ").capitalize())
 
-         activity_df["Activity Name"] = activity_df["Activity Key"].apply(format_activity_name)
+          activity_df["Activity Name"] = activity_df["Activity Key"].apply(format_activity_name)
         # -----------------------------------------
 
         top_n = min(10, len(activity_df))
@@ -307,11 +311,8 @@ else:
                  fig2_img_data = BytesIO(fig2.to_image(format="png", scale=2))
 
                  # Get logo data
-
-                 # Get logo data
                  logo_url = 'https://raw.githubusercontent.com/keanyaoha/Carbon-Footprint/main/GreenPrint_logo.png'
                  logo_data = get_logo_data(logo_url)
-
                  # Prepare top activities data dict
                  pdf_top_activities_data = dict(zip(top_n_df["Activity Key"], top_n_df["Emissions"]))
 
@@ -350,3 +351,4 @@ else:
 
         else:
             st.info("No activities with emissions found to display top emitters.")
+               
