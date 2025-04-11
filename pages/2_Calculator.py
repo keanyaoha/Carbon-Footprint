@@ -68,8 +68,6 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-
-
 # --- Initialize Session State Variables ---
 def init_session_state():
     defaults = {
@@ -85,15 +83,14 @@ def init_session_state():
             st.session_state[key] = value
 
 init_session_state()
--
 csv_url = "https://raw.githubusercontent.com/keanyaoha/Carbon-Footprint/main/emission_factor_formated.csv"
 csv_url_1 = "https://raw.githubusercontent.com/keanyaoha/Carbon-Footprint/main/per_capita_filtered_monthly.csv"
 
 @st.cache_data
-def load_data(csv_url, csv_url_1):
+def load_data(csv_url, per_capita_url):
     try:
         df_emis = pd.read_csv(csv_url)
-        df_cap = pd.read_csv(csv_url_1)
+        df_cap = pd.read_csv(per_capita_url)
         df_emis.columns = df_emis.columns.str.strip()
         if 'Activity' not in df_emis.columns:
              st.error("Emission data CSV is missing 'Activity' column.")
@@ -103,7 +100,7 @@ def load_data(csv_url, csv_url_1):
         st.error(f"Error loading data: {e}")
         return None, None
 
-df, df1 = load_data(csv_url, csv_url_1)
+df, df1 = load_data(CSV_URL, PER_CAPITA_URL)
 
 if df is None or df1 is None:
     st.warning("Data loading failed. App cannot continue.")
@@ -207,7 +204,7 @@ if st.session_state.selected_country != "-- Select --":
     
     # Display Tabs
     current_index = st.session_state.current_tab_index
-    if current_index == 0: 
+    if current_index == 0:
         display_activity_inputs(transport_activities, "transport", country)
         if st.button("Next →", key="next_transport", use_container_width=False):
             st.session_state.current_tab_index = 1; st.rerun()
