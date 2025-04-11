@@ -87,10 +87,10 @@ csv_url = "https://raw.githubusercontent.com/keanyaoha/Carbon-Footprint/main/emi
 csv_url_1 = "https://raw.githubusercontent.com/keanyaoha/Carbon-Footprint/main/per_capita_filtered_monthly.csv"
 
 @st.cache_data
-def load_data(csv_url, per_capita_url):
+def load_data(csv_url, csv_url_1):
     try:
         df_emis = pd.read_csv(csv_url)
-        df_cap = pd.read_csv(per_capita_url)
+        df_cap = pd.read_csv(csv_url_1)
         df_emis.columns = df_emis.columns.str.strip()
         if 'Activity' not in df_emis.columns:
              st.error("Emission data CSV is missing 'Activity' column.")
@@ -100,7 +100,7 @@ def load_data(csv_url, per_capita_url):
         st.error(f"Error loading data: {e}")
         return None, None
 
-df, df1 = load_data(CSV_URL, PER_CAPITA_URL)
+df, df1 = load_data(csv_url, csv_url_1)
 
 if df is None or df1 is None:
     st.warning("Data loading failed. App cannot continue.")
