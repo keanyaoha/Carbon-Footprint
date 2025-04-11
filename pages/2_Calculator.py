@@ -114,31 +114,18 @@ available_countries = sorted([col for col in df.columns if col != "Activity"])
 # Function to format activity names
 def format_activity_name(activity):
     activity_mappings = {
-        "Domestic_flight": "How many km of Domestic Flights taken the last month",
-        "International_flight": "How many km of International Flights taken the last month",
-        "Diesel_train_local": "How many km traveled by diesel-powered local passenger trains the last month",
-        "Diesel_train_long": "How many km traveled by diesel-powered long-distant passenger trains the last month",
-        "Electric_train": "How many km traveled by electric-powered passenger trains the last month",
-        "Bus": "How many km traveled by bus the last month",
-        "Petrol_car": "How many km traveled by petrol-powered car the last month",
-        "Motorcycle": "How many km traveled by motorcycle the last month",
-        "Ev_scooter": "How many km traveled by electric scooter the last month",
-        "Ev_car": "How many km traveled by electric-powered car the last month",
-        "Diesel_car": "How many km traveled by diesel-powered car the last month",
-        "Water": "How much water consumed in liters the last month",
-        "Electricity": "How much electricity used in kWh the last month",
-        "Beef": "How much beef consumed in kg the last month",
-        "Beverages": "How much beverages consumed in liters the last month",
-        "Poultry": "How much poultry consumed in Kg the last month",
-        "Pork": "How much pork have you consumed in kg the last month",
-        "Rice": "How much processed rice consumed in kg the last month",
-        "Sugar": "How much sugar have you consumed in kg the last month",
-        "Oils_fats": "How much vegetable oils and fats consumed in kg the last month",
-        "Other_meat": "How much other meat products consumed in kg the last month",
-        "Dairy": "How much dairy products consumed in kg the last month",
-        "Fish_products": "How much fish products consumed in kg the last month",
-        "Other_food": "How much other food products have you consumed in kg the last month",
-        "Hotel_stay": "How many nights stayed in hotels the last month"
+           "Domestic_flight": "Domestic Flights", "International_flight": "International Flights",
+                  "Diesel_train_local": "Diesel Local Train", "Diesel_train_long": "Diesel Long-Dist Train",
+                  "Electric_train": "Electric Train", "Bus": "Bus",
+                  "Petrol_car": "Petrol Car", "Motorcycle": "Motorcycle",
+                  "Ev_scooter": "E-Scooter", "Ev_car": "Electric Car",
+                  "Diesel_car": "Diesel Car", "Beef": "Beef Products",
+                  "Poultry": "Poultry Products", "Beverages": "Beverages", "Pork": "Pork Products",
+                  "Fish_products": "Fish Products", "Other_meat": "Other Meat Products",
+                  "Rice": "Rice", "Sugar": "Sugar",
+                  "Oils_fats": "Veg Oils/Fats", "Dairy": "Dairy Products",
+                  "Other_food": "Other Food", "Water": "Water",
+                  "Electricity": "Electricity", "Hotel_stay": "Hotel Stay",
     }
     return activity_mappings.get(activity, activity.replace("_", " ").capitalize())
 
