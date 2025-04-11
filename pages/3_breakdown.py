@@ -122,7 +122,7 @@ def generate_pdf_report(logo_data, category_data, top_activities_data, fig1_img_
                  }
                  return mapping.get(activity_key, activity_key.replace("_", " ").capitalize())
             
-            for activity_key, emission in top_activities_dict.items():
+           for activity_key, emission in top_activities_dict.items():
                 if y_pos < MARGIN + 1*cm:
                     c.showPage(); c.setFont("Helvetica", 9.5); y_pos = height - MARGIN
                 emission_val = emission if isinstance(emission, (int, float)) else 0
@@ -228,7 +228,7 @@ else:
             "Other": ["Hotel_stay"]
         }
        
-        # --- Compute totals ---
+          # --- Compute totals ---
         category_totals = {}
         all_categorized_emissions = {}
         for cat, acts_in_cat in categories.items():
@@ -278,7 +278,7 @@ else:
              }
              return mapping.get(activity_key, activity_key.replace("_", " ").capitalize())
 
-        activity_df["Activity Name"] = activity_df["Activity Key"].apply(format_activity_name)
+         activity_df["Activity Name"] = activity_df["Activity Key"].apply(format_activity_name)
         # -----------------------------------------
 
         top_n = min(10, len(activity_df))
@@ -305,6 +305,8 @@ else:
                  # Generate images first
                  fig1_img_data = BytesIO(fig1.to_image(format="png", scale=2))
                  fig2_img_data = BytesIO(fig2.to_image(format="png", scale=2))
+
+                 # Get logo data
 
                  # Get logo data
                  logo_url = 'https://raw.githubusercontent.com/keanyaoha/Carbon-Footprint/main/GreenPrint_logo.png'
