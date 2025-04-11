@@ -181,7 +181,7 @@ st.markdown("""
     <style>
         [data-testid="stSidebar"]::before {
             content: ""; display: block;
-            background-image: url('/static/GreenPrint_logo.png');
+            background-image: url('https://raw.githubusercontent.com/keanyaoha/Carbon-Footprint/main/GreenPrint_logo.png');
             background-size: 90% auto; background-repeat: no-repeat;
             background-position: center; height: 140px;
             margin: 1.5rem auto -4rem auto;
