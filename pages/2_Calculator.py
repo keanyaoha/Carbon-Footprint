@@ -86,8 +86,8 @@ def init_session_state():
 
 init_session_state()
 -
-csv_url = "https://raw.githubusercontent.com/keanyaoha/Final_Project_WBS/main/emission_factor_formated.csv"
-csv_url_1 = "https://raw.githubusercontent.com/keanyaoha/Final_Project_WBS/main/per_capita_filtered_monthly.csv"
+csv_url = "https://raw.githubusercontent.com/keanyaoha/Carbon-Footprint/main/emission_factor_formated.csv"
+csv_url_1 = "https://raw.githubusercontent.com/keanyaoha/Carbon-Footprint/main/per_capita_filtered_monthly.csv"
 
 @st.cache_data
 def load_data(csv_url, csv_url_1):
