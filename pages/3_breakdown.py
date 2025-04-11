@@ -107,18 +107,18 @@ def generate_pdf_report(logo_data, category_data, top_activities_data, fig1_img_
         if top_activities_dict:
             def format_activity_name_pdf(activity_key): # Needs access to this mapping
                  mapping = {
-                    "Domestic_flight": "Domestic Flights", "International_flight": "International Flights",
-                    "Diesel_train_local": "Diesel Local Train", "Diesel_train_long": "Diesel Long-Dist Train",
-                    "Electric_train": "Electric Train", "Bus": "Bus",
-                    "Petrol_car": "Petrol Car", "Motorcycle": "Motorcycle",
-                    "Ev_scooter": "E-Scooter", "Ev_car": "Electric Car",
-                    "Diesel_car": "Diesel Car", "Beef": "Beef Products",
-                    "Poultry": "Poultry Products", "Beverages": "Beverages", "Pork": "Pork Products",
-                    "Fish_products": "Fish Products", "Other_meat": "Other Meat Products",
-                    "Rice": "Rice", "Sugar": "Sugar",
-                    "Oils_fats": "Veg Oils/Fats", "Dairy": "Dairy Products",
-                    "Other_food": "Other Food", "Water": "Water",
-                    "Electricity": "Electricity", "Hotel_stay": "Hotel Stay",
+                  "Domestic_flight": "Domestic Flights", "International_flight": "International Flights",
+                  "Diesel_train_local": "Diesel Local Train", "Diesel_train_long": "Diesel Long-Dist Train",
+                  "Electric_train": "Electric Train", "Bus": "Bus",
+                  "Petrol_car": "Petrol Car", "Motorcycle": "Motorcycle",
+                  "Ev_scooter": "E-Scooter", "Ev_car": "Electric Car",
+                  "Diesel_car": "Diesel Car", "Beef": "Beef Products",
+                  "Poultry": "Poultry Products", "Beverages": "Beverages", "Pork": "Pork Products",
+                  "Fish_products": "Fish Products", "Other_meat": "Other Meat Products",
+                  "Rice": "Rice", "Sugar": "Sugar",
+                  "Oils_fats": "Veg Oils/Fats", "Dairy": "Dairy Products",
+                  "Other_food": "Other Food", "Water": "Water",
+                  "Electricity": "Electricity", "Hotel_stay": "Hotel Stay",
                  }
                  return mapping.get(activity_key, activity_key.replace("_", " ").capitalize())
             
