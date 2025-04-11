@@ -123,8 +123,7 @@ def generate_pdf_report(logo_data, category_data, top_activities_data, fig1_img_
                  }
                  return mapping.get(activity_key, activity_key.replace("_", " ").capitalize())
             
-          
-            for activity_key, emission in top_activities_dict.items():
+             for activity_key, emission in top_activities_dict.items():
                 if y_pos < MARGIN + 1*cm:
                     c.showPage(); c.setFont("Helvetica", 9.5); y_pos = height - MARGIN
                 emission_val = emission if isinstance(emission, (int, float)) else 0
@@ -189,7 +188,7 @@ st.markdown("""
             margin: 1.5rem auto -4rem auto;
         }
         section[data-testid="stSidebar"] { background-color: #d6f5ec; }
-        .stApp { background-color: white; }
+         .stApp { background-color: white; }
     </style>
 """, unsafe_allow_html=True)
 
@@ -222,7 +221,6 @@ else:
          st.warning("No positive emissions recorded. Cannot generate breakdown.")
          st.stop()
 
-
     else:
         # --- Define categories ---
         categories = {
@@ -232,7 +230,7 @@ else:
             "Other": ["Hotel_stay"]
         }
 
-          # --- Compute totals ---
+        # --- Compute totals ---
         category_totals = {}
         all_categorized_emissions = {}
         for cat, acts_in_cat in categories.items():
@@ -284,7 +282,6 @@ else:
 
           activity_df["Activity Name"] = activity_df["Activity Key"].apply(format_activity_name)
         # -----------------------------------------
-
         top_n = min(10, len(activity_df))
         top_n_df = activity_df.sort_values("Emissions", ascending=False).head(top_n)
 
@@ -313,6 +310,7 @@ else:
                  # Get logo data
                  logo_url = 'https://raw.githubusercontent.com/keanyaoha/Carbon-Footprint/main/GreenPrint_logo.png'
                  logo_data = get_logo_data(logo_url)
+
                  # Prepare top activities data dict
                  pdf_top_activities_data = dict(zip(top_n_df["Activity Key"], top_n_df["Emissions"]))
 
@@ -351,4 +349,3 @@ else:
 
         else:
             st.info("No activities with emissions found to display top emitters.")
-               
