@@ -200,11 +200,11 @@ if st.session_state.selected_country != "-- Select --":
                 st.session_state.emission_values[activity] = 0.0
 
     # Define Activity Lists
-    transport_activities = ["Domestic_flight", "International_flight", "Diesel_train_local", "Diesel_train_long", "Electric_train", "Bus", "Petrol_car", "Diesel_car", "Motorcycle", "Ev_scooter", "Ev_car”]
-    food_activities = ["Beef", "Beverages", "Poultry", "Pork", "Fish_products", "Other_meat", "Dairy", "Rice", "Sugar", "Oils_fats", "Other_food"]
-    energy_water_activities = ["Water", "Electricity"]
+    transport_activities = ["Domestic_flight", "International_flight", "Diesel_train_local", "Diesel_train_long", "Electric_train",  "Bus", "Petrol_car", "Ev_car", "Ev_scooter", "Motorcycle", "Diesel_car"]
+    food_activities = ["Beef", "Poultry", "Pork", "Dairy", "Fish_products", "Rice", "Sugar", "Oils_fats", "Other_food", "Beverages", "Other_meat"]
+    energy_water_activities = ["Electricity", "Water"]
     hotel_activities = ["Hotel_stay"]
-               
+    
     # Display Tabs
     current_index = st.session_state.current_tab_index
     if current_index == 0: 
