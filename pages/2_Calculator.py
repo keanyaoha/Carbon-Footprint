@@ -220,7 +220,7 @@ if st.session_state.selected_country != "-- Select --":
                
     # Display Tabs
     current_index = st.session_state.current_tab_index
-    if current_index == 0:
+    if current_index == 0: 
         display_activity_inputs(transport_activities, "transport", country)
         if st.button("Next →", key="next_transport", use_container_width=False):
             st.session_state.current_tab_index = 1; st.rerun()
